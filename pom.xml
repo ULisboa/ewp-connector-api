@@ -10,6 +10,20 @@
 
   <name>EWP Connector API</name>
   <description>Generated API data classes for EWP network.</description>
+  <url>https://github.com/ULisboa/ewp-connector-api</url>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:git://github.com/ULisboa/ewp-connector-api.git</connection>
+    <developerConnection>scm:git:ssh://github.com:ULisboa/ewp-connector-api.git</developerConnection>
+    <url>http://github.com/ULisboa/ewp-connector-api/tree/master</url>
+  </scm>
 
   <dependencies>
     <dependency>
