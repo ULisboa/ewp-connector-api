@@ -5,43 +5,43 @@
 
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-sec-cliauth-none/stable-v1/security-entries.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.client.auth.methods.cliauth.none"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.client.auth.methods.cliauth.none.v1"/>
         </jaxb:schemaBindings>
         <jaxb:bindings node="//xs:element[@name='anonymous']">
-            <jaxb:class name="CliauthAnonymous"/>
+            <jaxb:class name="CliauthAnonymousV1"/>
         </jaxb:bindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-sec-cliauth-tlscert/stable-v1/security-entries.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.client.auth.methods.cliauth.tlscert"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.client.auth.methods.cliauth.tlscert.v1"/>
         </jaxb:schemaBindings>
         <jaxb:bindings node="//xs:element[@name='tlscert']">
-            <jaxb:class name="CliauthTlscert"/>
+            <jaxb:class name="CliauthTlscertV1"/>
         </jaxb:bindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-sec-cliauth-httpsig/stable-v1/security-entries.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.client.auth.methods.cliauth.httpsig"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.client.auth.methods.cliauth.httpsig.v1"/>
         </jaxb:schemaBindings>
         <jaxb:bindings node="//xs:element[@name='httpsig']">
-            <jaxb:class name="CliauthHttpsig"/>
+            <jaxb:class name="CliauthHttpsigV1"/>
         </jaxb:bindings>
     </jaxb:bindings>
 
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-sec-srvauth-tlscert/stable-v1/security-entries.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.client.auth.methods.srvauth.tlscert"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.client.auth.methods.srvauth.tlscert.v1"/>
         </jaxb:schemaBindings>
         <jaxb:bindings node="//xs:element[@name='tlscert']">
-            <jaxb:class name="SrvauthTlscert"/>
+            <jaxb:class name="SrvauthTlscertV1"/>
         </jaxb:bindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-sec-srvauth-httpsig/stable-v1/security-entries.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.client.auth.methods.srvauth.httpsig"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.client.auth.methods.srvauth.httpsig.v1"/>
         </jaxb:schemaBindings>
         <jaxb:bindings node="//xs:element[@name='httpsig']">
-            <jaxb:class name="SrvauthHttpsig"/>
+            <jaxb:class name="SrvauthHttpsigV1"/>
         </jaxb:bindings>
     </jaxb:bindings>
 </jaxb:bindings>

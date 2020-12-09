@@ -3,18 +3,18 @@
                xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
                xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-registry/stable-v1/catalogue.xsd">
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-imobility-tor-cnr/stable-v1/response.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.registry.v1"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.imobilities.tors.cnr.v1"/>
             <jaxb:nameXmlTransform>
               <jaxb:typeName suffix="V1" />
               <jaxb:elementName suffix="V1" />
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
-    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-registry/stable-v1/manifest-entry.xsd">
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-imobility-tor-cnr/stable-v1/manifest-entry.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.registry.v1"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.imobilities.tors.cnr.v1"/>
             <jaxb:nameXmlTransform>
               <jaxb:typeName suffix="V1" />
               <jaxb:elementName suffix="V1" />

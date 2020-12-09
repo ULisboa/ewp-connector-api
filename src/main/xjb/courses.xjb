@@ -5,12 +5,20 @@
 
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-courses/master/response.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.courses"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.courses.v0"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V0" />
+              <jaxb:elementName suffix="V0" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-courses/master/manifest-entry.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.courses"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.courses.v0"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V0" />
+              <jaxb:elementName suffix="V0" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
 </jaxb:bindings>

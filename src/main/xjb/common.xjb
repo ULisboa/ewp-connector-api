@@ -14,28 +14,48 @@
 
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-architecture/stable-v1/common-types.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.architecture"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.architecture.v1"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V1" />
+              <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-types-address/stable-v1/schema.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.types.address"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.types.address.v1"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V1" />
+              <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-types-academic-term/stable-v1/schema.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.types.academicterm"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.types.academicterm.v1"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V1" />
+              <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-types-contact/stable-v1/schema.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.types.contact"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.types.contact.v1"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V1" />
+              <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-types-phonenumber/stable-v1/schema.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.types.phonenumber"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.types.phonenumber.v1"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V1" />
+              <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-sec-intro/stable-v2/schema.xsd">
@@ -45,12 +65,12 @@
         <jaxb:bindings node="//xs:complexType[@name='HttpSecurityOptions']">
             <annox:annotate target="class">
                 @javax.xml.bind.annotation.XmlSeeAlso({
-                    eu.erasmuswithoutpaper.api.client.auth.methods.cliauth.none.CliauthAnonymous.class,
-                    eu.erasmuswithoutpaper.api.client.auth.methods.cliauth.tlscert.CliauthTlscert.class,
-                    eu.erasmuswithoutpaper.api.client.auth.methods.cliauth.httpsig.CliauthHttpsig.class,
+                    eu.erasmuswithoutpaper.api.client.auth.methods.cliauth.none.v1.CliauthAnonymousV1.class,
+                    eu.erasmuswithoutpaper.api.client.auth.methods.cliauth.tlscert.v1.CliauthTlscertV1.class,
+                    eu.erasmuswithoutpaper.api.client.auth.methods.cliauth.httpsig.v1.CliauthHttpsigV1.class,
 
-                    eu.erasmuswithoutpaper.api.client.auth.methods.srvauth.tlscert.SrvauthTlscert.class,
-                    eu.erasmuswithoutpaper.api.client.auth.methods.srvauth.httpsig.SrvauthHttpsig.class
+                    eu.erasmuswithoutpaper.api.client.auth.methods.srvauth.tlscert.v1.SrvauthTlscertV1.class,
+                    eu.erasmuswithoutpaper.api.client.auth.methods.srvauth.httpsig.v1.SrvauthHttpsigV1.class
                 })
             </annox:annotate>
         </jaxb:bindings>
@@ -58,12 +78,20 @@
     
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/emrex-eu/elmo-schemas/v1/schema.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.emrex.elmo"/>
+            <jaxb:package name="eu.emrex.elmo.v1"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V1" />
+              <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/emrex-eu/elmo-schemas/v1/references/xmldsig-core-schema.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="org.w3.xmldsig"/>
+            <jaxb:package name="org.w3.xmldsig.v1"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V1" />
+              <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     

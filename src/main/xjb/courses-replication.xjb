@@ -3,14 +3,22 @@
                xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
                xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-course-replication/v1.0.0-rc9/response.xsd">
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-course-replication/master/response.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.courses.replication"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.courses.replication.v1"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V1" />
+              <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
-    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-course-replication/v1.0.0-rc9/manifest-entry.xsd">
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-course-replication/master/manifest-entry.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.courses.replication"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.courses.replication.v1"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V1" />
+              <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
 </jaxb:bindings>

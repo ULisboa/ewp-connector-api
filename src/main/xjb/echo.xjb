@@ -3,14 +3,22 @@
                xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
                xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-echo/v2.0.1/response.xsd">
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-echo/stable-v2/response.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.echo"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.echo.v2"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V2" />
+              <jaxb:elementName suffix="V2" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
-    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-echo/v2.0.1/manifest-entry.xsd">
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-echo/stable-v2/manifest-entry.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.echo"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.echo.v2"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V2" />
+              <jaxb:elementName suffix="V2" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
 </jaxb:bindings>

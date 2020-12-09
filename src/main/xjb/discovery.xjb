@@ -3,9 +3,13 @@
                xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
                xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-discovery/v5.0.0/manifest.xsd">
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-discovery/stable-v5/manifest.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.discovery"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.discovery.v5"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V5" />
+              <jaxb:elementName suffix="V5" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
         <jaxb:bindings node="//xs:element[@name='certificate']">
             <jaxb:property>
@@ -22,9 +26,13 @@
             </jaxb:property>
         </jaxb:bindings>        
     </jaxb:bindings>
-    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-discovery/v5.0.0/manifest-entry.xsd">
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-discovery/stable-v5/manifest-entry.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="eu.erasmuswithoutpaper.api.discovery"/>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.discovery.v5"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V5" />
+              <jaxb:elementName suffix="V5" />
+            </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
 </jaxb:bindings>
