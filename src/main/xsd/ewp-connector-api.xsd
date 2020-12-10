@@ -52,6 +52,24 @@
   />
 
 
+  <!--
+    - IIAS
+    -->
+  <!-- V3 -->
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iias/stable-v3/endpoints/get-response.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-iias/blob/stable-v3/endpoints/get-response.xsd"
+  />
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iias/stable-v3/endpoints/index-response.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-iias/blob/stable-v3/endpoints/index-response.xsd"
+  />
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iias/stable-v3/manifest-entry.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-iias/blob/stable-v3/manifest-entry.xsd"
+  />
+
+  <!-- V4 -->
   <xs:import
     schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iias/stable-v4/endpoints/get-response.xsd"
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-iias/blob/stable-v4/endpoints/get-response.xsd"
