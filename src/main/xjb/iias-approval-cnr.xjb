@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings version="2.1"
+               xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iia-approval-cnr/stable-v1/response.xsd">
+        <jaxb:bindings node="//xs:element[@name='iia-approval-cnr-response']">
+            <jaxb:class name="IiaApprovalCnrResponseV1"/>
+        </jaxb:bindings>
+
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.iias.approval.cnr.v1"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V1" />
+              <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iia-approval-cnr/stable-v1/manifest-entry.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.iias.approval.cnr.v1"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V1" />
+              <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+</jaxb:bindings>
