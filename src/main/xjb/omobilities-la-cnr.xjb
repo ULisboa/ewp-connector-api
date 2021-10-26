@@ -4,6 +4,10 @@
                xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobility-la-cnr/stable-v1/response.xsd">
+        <jaxb:bindings node="//xs:element[@name='omobility-la-cnr-response']">
+            <jaxb:class name="OmobilityLaCnrResponseV1"/>
+        </jaxb:bindings>
+
         <jaxb:schemaBindings>
             <jaxb:package name="eu.erasmuswithoutpaper.api.omobilities.las.cnr.v1"/>
             <jaxb:nameXmlTransform>
