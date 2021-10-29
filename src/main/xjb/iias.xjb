@@ -60,4 +60,33 @@
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
+
+    <!-- V6 -->
+    <jaxb:bindings schemaLocation="https://github.com/erasmus-without-paper/ewp-specs-api-iias/raw/stable-v6/endpoints/get-response.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.iias.v6.endpoints"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V6" />
+              <jaxb:elementName suffix="V6" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="https://github.com/erasmus-without-paper/ewp-specs-api-iias/raw/stable-v6/endpoints/index-response.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.iias.v6.endpoints"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V6" />
+              <jaxb:elementName suffix="V6" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="https://github.com/erasmus-without-paper/ewp-specs-api-iias/raw/stable-v6/manifest-entry.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.iias.v6"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V6" />
+              <jaxb:elementName suffix="V6" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
 </jaxb:bindings>
