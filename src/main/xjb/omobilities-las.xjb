@@ -22,6 +22,13 @@
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobility-las/stable-v1/endpoints/update-request.xsd">
+        <jaxb:bindings node="//xs:element[@name='approve-proposal-v1']">
+            <jaxb:class name="ApproveProposalV1"/>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:element[@name='comment-proposal-v1']">
+            <jaxb:class name="CommentProposalV1"/>
+        </jaxb:bindings>
+
         <jaxb:schemaBindings>
             <jaxb:package name="eu.erasmuswithoutpaper.api.omobilities.las.v1.endpoints"/>
             <jaxb:nameXmlTransform>
