@@ -53,6 +53,12 @@
 
 
   <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-file/stable-v1/manifest-entry.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-file/blob/stable-v1/manifest-entry.xsd"
+  />
+
+
+  <xs:import
     schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-factsheet/stable-v1/response.xsd"
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-factsheet/tree/stable-v1"
   />
