@@ -11,13 +11,6 @@
               <jaxb:elementName suffix="V6" />
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
-        <jaxb:bindings node="//xs:element[@name='certificate']">
-            <jaxb:property>
-                <jaxb:baseType>
-                    <jaxb:javaType name="String"/>
-                </jaxb:baseType>
-            </jaxb:property>
-        </jaxb:bindings>
         <jaxb:bindings multiple="true" node="//xs:element[@name='rsa-public-key']">
             <jaxb:property>
                 <jaxb:baseType>
