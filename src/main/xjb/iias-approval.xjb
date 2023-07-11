@@ -3,6 +3,7 @@
                xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
                xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+    <!-- V1 -->
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iias-approval/stable-v1/response.xsd">
         <jaxb:schemaBindings>
             <jaxb:package name="eu.erasmuswithoutpaper.api.iias.approval.v1"/>
@@ -18,6 +19,26 @@
             <jaxb:nameXmlTransform>
               <jaxb:typeName suffix="V1" />
               <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <!-- V2 -->
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iias-approval/stable-v2/response.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.iias.approval.v2"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V2" />
+              <jaxb:elementName suffix="V2" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iias-approval/stable-v2/manifest-entry.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.iias.approval.v2"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V2" />
+              <jaxb:elementName suffix="V2" />
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
