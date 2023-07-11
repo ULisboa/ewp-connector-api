@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.10.0](https://github.com/ULisboa/ewp-connector-api/tree/3.10.0) (2023-07-11)
+
+### Features
+-  add IIAs Approval V2 API ([7b49aa792a2ee11](https://github.com/ULisboa/ewp-connector-api/commit/7b49aa792a2ee117fbe0c3ee71e64029e0d670b6))
+-  add IIAs API V7 ([fd0a9ec2ec02e75](https://github.com/ULisboa/ewp-connector-api/commit/fd0a9ec2ec02e756241b8124df9359517f13aa4d))
+-  add IIA Approval CNR V2 API ([0089f5304706c03](https://github.com/ULisboa/ewp-connector-api/commit/0089f5304706c0395710320006d53406f4988630))
+-  add IIA CNR v3 ([f03cb428d57cf28](https://github.com/ULisboa/ewp-connector-api/commit/f03cb428d57cf289ccd200b6b46cbe9b70c63386))
+
+
+
+
 ## [3.9.2](https://github.com/ULisboa/ewp-connector-api/tree/3.9.2) (2023-07-07)
 
 
