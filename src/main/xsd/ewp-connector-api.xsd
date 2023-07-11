@@ -137,6 +137,7 @@
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-iia-approval-cnr/blob/stable-v1/manifest-entry.xsd"
   />
 
+  <!-- IIA CNR V2 -->
   <xs:import
     schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iia-cnr/stable-v2/response.xsd"
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-iia-cnr/tree/stable-v2"
@@ -144,6 +145,16 @@
   <xs:import
     schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iia-cnr/stable-v2/manifest-entry.xsd"
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-iia-cnr/blob/stable-v2/manifest-entry.xsd"
+  />
+
+  <!-- IIA CNR V3 -->
+  <xs:import
+          schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iia-cnr/stable-v3/response.xsd"
+          namespace="https://github.com/erasmus-without-paper/ewp-specs-api-iia-cnr/tree/stable-v3"
+  />
+  <xs:import
+          schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iia-cnr/stable-v3/manifest-entry.xsd"
+          namespace="https://github.com/erasmus-without-paper/ewp-specs-api-iia-cnr/blob/stable-v3/manifest-entry.xsd"
   />
 
   <xs:import
