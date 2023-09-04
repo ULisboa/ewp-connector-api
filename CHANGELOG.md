@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.11.1](https://github.com/ULisboa/ewp-connector-api/tree/3.11.1) (2023-09-04)
+
+
+
+### Bug Fixes
+-  add missing MonitoringResponseV1 ([58cd4ab2ee61f6e](https://github.com/ULisboa/ewp-connector-api/commit/58cd4ab2ee61f6e39ed28907007cd463db5e813c))
+
+
 ## [3.11.0](https://github.com/ULisboa/ewp-connector-api/tree/3.11.0) (2023-09-04)
 
 ### Features
