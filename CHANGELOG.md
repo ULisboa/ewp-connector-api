@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.11.0](https://github.com/ULisboa/ewp-connector-api/tree/3.11.0) (2023-09-04)
+
+### Features
+-  add Monitoring V1 API ([3faa0cd6d2c7149](https://github.com/ULisboa/ewp-connector-api/commit/3faa0cd6d2c71492441591e1a4e6baf9f7e2617b))
+
+
+
+
 ## [3.10.0](https://github.com/ULisboa/ewp-connector-api/tree/3.10.0) (2023-07-11)
 
 ### Features
