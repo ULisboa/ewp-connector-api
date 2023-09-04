@@ -352,6 +352,18 @@
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-imobility-tor-cnr/blob/stable-v1/manifest-entry.xsd"
   />
 
+
+  <!-- Monitoring -->
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-monitoring/master/response.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-monitoring/tree/stable-v1"
+  />
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-monitoring/master/manifest-entry.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-monitoring/blob/stable-v1/manifest-entry.xsd"
+  />
+
+
   <xs:import
     schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-sec-cliauth-none/stable-v1/security-entries.xsd"
     namespace="https://github.com/erasmus-without-paper/ewp-specs-sec-cliauth-none/tree/stable-v1"
