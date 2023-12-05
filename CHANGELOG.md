@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.12.0](https://github.com/ULisboa/ewp-connector-api/tree/3.12.0) (2023-12-05)
+
+### Features
+-  add script to retrieve all the current EWP API specifications ([48433c612c536c2](https://github.com/ULisboa/ewp-connector-api/commit/48433c612c536c2698810f1431ebd16267ddc2e9))
+
+
+
+
 ## [3.11.1](https://github.com/ULisboa/ewp-connector-api/tree/3.11.1) (2023-09-04)
 
 
