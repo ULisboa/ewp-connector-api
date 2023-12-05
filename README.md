@@ -27,27 +27,19 @@ It is based on https://github.com/erasmus-without-paper/ewp-reference-connector/
 
 To use the library, click the Maven Central badge above and use the correct snippet for your dependency manager.
 
+This library includes stable APIs and APIs still in progress.
+
+## Update the APIs
+
+By executing ```./update_schemas/update_schemas.sh``` it is possible to refresh the folder [src/main/resources/schemas](src/main/resources/schemas).
+
+Note that new major versions require the corresponding adaptations on the correct file of [src/main/resources/xjb](src/main/resources/xjb).
+
 ## Build and install library
 ```
 mvn clean install
 ```
 
-## Note
-This library includes stable APIs and APIs still in progress.
-
 ## Included APIs
-* Discovery Manifest API `v5.0.0`
-* Echo API `v2.0.1`
-* Registry API `stable-v1`
-* Institutions API `v2.1.0`
-* Organization Units API `v2.1.0`
-* Courses API `master`
-* Simple Course Replication API `v1.0.0-rc9`
-* Interinstitutional Agreements API `v2.1.0`
-* Interinstitutional Agreement CNR API `v2.0.2`
-* Outgoing Mobilities API `v0.15.0`
-* Outgoing Mobility CNR API `v0.4.1`
-* Incoming Mobilities API `v0.3.0`
-* Incoming Mobility CNR API `v0.1.1`
-* Incoming Mobility ToRs API `v0.7.0`
-* Incoming Mobility ToR CNR API `v0.1.1`
+
+For an up-to-date list of supported APIs check the folder [src/main/resources/schemas](src/main/resources/schemas).

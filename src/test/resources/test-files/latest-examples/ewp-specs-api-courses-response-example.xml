@@ -1,0 +1,76 @@
+<courses-response
+    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1"
+    xmlns:trm="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1
+        https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-courses/master/response.xsd
+    "
+>
+    <!--
+    IMPORTANT: Please see the response.xsd file for detailed requirements and
+    descriptions of all the elements. You MUST NOT base your implementation
+    solely on the example file.
+    -->
+    <learningOpportunitySpecification>
+        <los-id>CR/f6d14b1f-f330-4956-8819-e24feb12d519</los-id>
+        <title xml:lang="no">Grunnkurs i matematikk</title>
+        <title xml:lang="en">Introductory calculus</title>
+        <type>Course</type>
+        <subjectArea>12345</subjectArea>
+        <iscedCode>0541</iscedCode>
+        <url>http://example.com/</url>
+        <description xml:lang="no">En eller annen beskrivelse</description>
+        <description xml:lang="en">Some description</description>
+        <specifies>
+            <learningOpportunityInstance>
+                <loi-id>CRI/13466290</loi-id> <!-- we recommend UUIDs though -->
+                <start>2016-07-01</start>
+                <end>2016-12-31</end>
+                <trm:academic-term>
+                    <trm:academic-year-id>2016/2017</trm:academic-year-id>
+                    <trm:ewp-id>2016/2017-1/2</trm:ewp-id>
+                    <trm:display-name xml:lang="en-us">Fall 2016/2017</trm:display-name>
+                    <trm:display-name xml:lang="no">Høst 2016/2017</trm:display-name>
+                    <trm:start-date>2016-07-01</trm:start-date>
+                    <trm:end-date>2016-12-31</trm:end-date>
+                </trm:academic-term>
+                <gradingScheme>
+                    <label>0-100</label>
+                    <description xml:lang="en">Optional description of the grading scheme.</description>
+                </gradingScheme>
+                <resultDistribution>
+                    <category label="0-50" count="159" />
+                    <category label="50-100" count="40" />
+                    <description xml:lang="en">Simple example of distribution.</description>
+                </resultDistribution>
+                <credit>
+                    <scheme>ects</scheme>
+                    <level>Bachelor</level>
+                    <value>15</value>
+                </credit>
+                <credit>
+                    <scheme>no-vt</scheme>
+                    <value>5</value>
+                </credit>
+                <languageOfInstruction>en</languageOfInstruction>
+                <engagementHours>60</engagementHours>
+            </learningOpportunityInstance>
+            <learningOpportunityInstance>
+                <loi-id>CRI/14061212</loi-id>
+                <start>2015-07-01</start>
+                <end>2015-12-31</end>
+            </learningOpportunityInstance>
+        </specifies>
+        <contains>
+            <los-id>CLS/95153879-1ba9-43a0-a845-0a50b4d52f9b</los-id>
+            <los-id>CLS/06e518cc-a67c-4595-a7bb-367978d93e70</los-id>
+        </contains>
+    </learningOpportunitySpecification>
+    <learningOpportunitySpecification>
+        <los-id>DEP/a1a43018-558c-45ed-a187-3c966e7bac77</los-id>
+        <title xml:lang="no">Statsvitenskap hovedfag</title>
+        <title xml:lang="en">Political science, main subject</title>
+        <type>Degree Programme</type>
+    </learningOpportunitySpecification>
+</courses-response>

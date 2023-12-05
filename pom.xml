@@ -91,6 +91,13 @@
             <configuration>
               <extension>true</extension>
               <arguments>-Xannotate</arguments>
+              <catalog>src/main/resources/schemas/__index__.xml</catalog>
+              <sources>
+                <source>src/main/resources/schemas/ewp.xsd</source>
+              </sources>
+              <xjbSources>
+                <xjbSource>src/main/resources/xjb/</xjbSource>
+              </xjbSources>
             </configuration>
           </execution>
         </executions>

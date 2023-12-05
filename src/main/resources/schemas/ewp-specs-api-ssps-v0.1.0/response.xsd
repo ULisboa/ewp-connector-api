@@ -1,0 +1,325 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
+           xmlns:p="https://github.com/erasmus-without-paper/ewp-specs-types-phonenumber/tree/stable-v1"
+           elementFormDefault="qualified"
+           targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-ssps/tree/stable-v1"
+           xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-ssps/tree/stable-v1">
+
+    <xs:import
+            schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-architecture/stable-v1/common-types.xsd"
+            namespace="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"/>
+
+    <xs:import
+            schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-types-phonenumber/stable-v1/schema.xsd"
+            namespace="https://github.com/erasmus-without-paper/ewp-specs-types-phonenumber/tree/stable-v1"/>
+
+    <xs:annotation>
+        <xs:documentation>
+            This schema is a part of the Erasmus Without Paper project. Before you start using it,
+            make sure you have read the general rules described here:
+
+            https://developers.erasmuswithoutpaper.eu/
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="ssps-response">
+        <xs:annotation>
+            <xs:documentation>
+                This describes the format of the response returned by the EWP Student Service
+                Providers API.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accommodation" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="provider-name" type="xs:string"/>
+                            <xs:element name="provider-type">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="hei-unit"/>
+                                        <xs:enumeration value="public-third-party"/>
+                                        <xs:enumeration value="private-third-party"/>
+                                        <xs:enumeration value="other"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="country-code" type="ewp:CountryCode"/>
+                            <xs:element name="city" type="xs:string"/>
+                            <xs:element name="info-url" type="ewp:HTTP"/>
+                            <xs:element name="contact-email" type="ewp:Email"/>
+                            <xs:element name="contact-name" type="xs:string" minOccurs="0"/>
+                            <xs:element name="phone-number" type="p:PhoneNumber" minOccurs="0"/>
+                            <xs:element name="booking-url" type="ewp:HTTP" minOccurs="0"/>
+                            <xs:element name="minimum-hosting-period" minOccurs="0">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="academic-year"/>
+                                        <xs:enumeration value="semester"/>
+                                        <xs:enumeration value="one-month"/>
+                                        <xs:enumeration value="other"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="library" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="venue" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name" type="xs:string"/>
+                                        <xs:element name="address" type="xs:string"/>
+                                        <xs:element name="location" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    May be coordinates as text or URL.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="specialty" type="xs:string" minOccurs="0"/>
+                                        <xs:element name="open-hours" type="xs:string" minOccurs="0"/>
+                                        <xs:element name="description" type="xs:string" minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="contact-email" type="ewp:Email"/>
+                            <xs:element name="info-url" type="ewp:HTTP" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="scholarship-mobile-students" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="description" type="xs:string"/>
+                            <xs:element name="contact-email" type="ewp:Email"/>
+                            <xs:element name="info-url" type="ewp:HTTP" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="insurance" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="type">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="health"/>
+                                        <xs:enumeration value="liability"/>
+                                        <xs:enumeration value="other"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="info-url" type="ewp:HTTP"/>
+                            <xs:element name="description" type="xs:string" minOccurs="0"/>
+                            <xs:element name="registration-url" type="ewp:HTTP" minOccurs="0"/>
+                            <xs:element name="emergency-phone-number" type="p:PhoneNumber" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="student-well-being" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="description" type="xs:string"/>
+                            <xs:element name="contact-email" type="ewp:Email"/>
+                            <xs:element name="contact-name" type="xs:string" minOccurs="0"/>
+                            <xs:element name="info-url" type="ewp:HTTP" minOccurs="0"/>
+                            <xs:element name="phone-number" type="p:PhoneNumber" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="canteen" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="place" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name" type="xs:string"/>
+                                        <xs:element name="address" type="xs:string"/>
+                                        <xs:element name="location" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    May be coordinates as text or URL.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="open-hours" type="xs:string" minOccurs="0"/>
+                                        <xs:element name="payment-methods" type="xs:string" minOccurs="0"/>
+                                        <xs:element name="average-meal-cost" type="xs:string" minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="other-information" type="xs:string" minOccurs="0"/>
+                            <xs:element name="self-service-equipment" type="xs:string" minOccurs="0"/>
+                            <xs:element name="lunch-vouchers" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="transport-service" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="provider-name" type="xs:string"/>
+                            <xs:element name="service-description" type="xs:string"/>
+                            <xs:element name="info-url" type="ewp:HTTP"/>
+                            <xs:element name="payment-methods" type="xs:string" minOccurs="0"/>
+                            <xs:element name="booking-url" type="ewp:HTTP" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="culture" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="activity-name" type="xs:string"/>
+                            <xs:element name="activity-type">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="theatre"/>
+                                        <xs:enumeration value="film"/>
+                                        <xs:enumeration value="exhibition"/>
+                                        <xs:enumeration value="concert"/>
+                                        <xs:enumeration value="dance"/>
+                                        <xs:enumeration value="other"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="info-url" type="ewp:HTTP"/>
+                            <xs:element name="address" type="xs:string" minOccurs="0"/>
+                            <xs:element name="description" type="xs:string" minOccurs="0"/>
+                            <xs:element name="price" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="epayment" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="info-url" type="ewp:HTTP"/>
+                            <xs:element name="requirements" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="multiservice-card" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="accessible-services" type="xs:string"/>
+                            <xs:element name="description" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="print" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="address" type="xs:string"/>
+                            <xs:element name="url" type="ewp:HTTP"/>
+                            <xs:element name="quota" type="xs:string" minOccurs="0"/>
+                            <xs:element name="average-cost-per-copy" type="xs:string" minOccurs="0"/>
+                            <xs:element name="payment-methods" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="student-supplies" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="address" type="xs:string"/>
+                            <xs:element name="url" type="ewp:HTTP"/>
+                            <xs:element name="description" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="sport" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="type">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="air-sports"/>
+                                        <xs:enumeration value="athletics"/>
+                                        <xs:enumeration value="ball-sports"/>
+                                        <xs:enumeration value="board-sports"/>
+                                        <xs:enumeration value="compat-sports"/>
+                                        <xs:enumeration value="cycle-sports"/>
+                                        <xs:enumeration value="gymnastics"/>
+                                        <xs:enumeration value="ice-sports"/>
+                                        <xs:enumeration value="indoor-sports"/>
+                                        <xs:enumeration value="mind-sports"/>
+                                        <xs:enumeration value="multi-sport-race"/>
+                                        <xs:enumeration value="motorsports"/>
+                                        <xs:enumeration value="rocket-sports"/>
+                                        <xs:enumeration value="strength-sports"/>
+                                        <xs:enumeration value="target-sports"/>
+                                        <xs:enumeration value="water-sports"/>
+                                        <xs:enumeration value="other"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="info-url" type="ewp:HTTP"/>
+                            <xs:element name="price" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="student-association" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="type">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="political"/>
+                                        <xs:enumeration value="topical"/>
+                                        <xs:enumeration value="other"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="contact-email" type="ewp:Email"/>
+                            <xs:element name="info-url" type="ewp:HTTP" minOccurs="0"/>
+                            <xs:element name="phone-number" type="p:PhoneNumber" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="language-learning" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="available-language" type="xs:language" maxOccurs="unbounded"/>
+                            <xs:element name="info-url" type="ewp:HTTP"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="alumni" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="contact-email" type="ewp:Email"/>
+                            <xs:element name="contact-name" type="xs:string" minOccurs="0"/>
+                            <xs:element name="info-url" type="ewp:HTTP" minOccurs="0"/>
+                            <xs:element name="phone-number" type="p:PhoneNumber" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="volunteering-and-opportunities" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="organizational-unit-name" type="xs:string"/>
+                            <xs:element name="provider-name" type="xs:string"/>
+                            <xs:element name="contact-email" type="ewp:Email"/>
+                            <xs:element name="info-url" type="ewp:HTTP" minOccurs="0"/>
+                            <xs:element name="phone-number" type="p:PhoneNumber" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="sport-for-ects-url" type="ewp:HTTP" minOccurs="0"/>
+                <xs:element name="career-and-jobs-url" type="ewp:HTTP" minOccurs="0"/>
+                <xs:element name="it-services-url" type="ewp:HTTP" minOccurs="0"/>
+                <xs:element name="inclusion-info-url" type="ewp:HTTP" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

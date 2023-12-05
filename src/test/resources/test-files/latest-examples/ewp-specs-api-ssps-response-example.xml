@@ -1,0 +1,48 @@
+<ssps-response xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-ssps/tree/stable-v1">
+    <accommodation>
+        <provider-name>Student residence halls</provider-name>
+        <provider-type>hei-unit</provider-type>
+        <country-code>PL</country-code>
+        <city>Warsaw</city>
+        <info-url>https://welcome.uw.edu.pl/before-you-arrive/accomodation/</info-url>
+        <contact-email>welcome@uw.edu.pl</contact-email>
+    </accommodation>
+    <library>
+        <venue>
+            <name>University of Warsaw Library</name>
+            <address>Dobra 56/66 00-312 Warsaw</address>
+        </venue>
+        <contact-email>askalibrary.buw@uw.edu.pl</contact-email>
+    </library>
+    <scholarship-mobile-students>
+        <description>Scholarship for mobile students</description>
+        <contact-email>admission@uw.edu.pl</contact-email>
+        <info-url>http://rekrutacja.uw.edu.pl/en/scholarships/</info-url>
+    </scholarship-mobile-students>
+    <insurance>
+        <name>Health insurance</name>
+        <type>health</type>
+        <info-url>https://welcome.uw.edu.pl/before-you-arrive/health-insurance/</info-url>
+    </insurance>
+    <student-well-being>
+        <description>Ombudsman</description>
+        <contact-email>ombudsman@uw.edu.pl</contact-email>
+        <info-url>http://ombudsman.uw.edu.pl/en/start/</info-url>
+    </student-well-being>
+    <canteen>
+        <place>
+            <name>Central Canteen</name>
+            <address>Krakowskie Przedmieście 26/28 00-927 Warszawa</address>
+        </place>
+    </canteen>
+    <transport-service>
+        <provider-name>Warsaw Public Transport Authority</provider-name>
+        <service-description>Public transportation in Warsaw</service-description>
+        <info-url>https://welcome.uw.edu.pl/during-your-stay/transportation/</info-url>
+    </transport-service>
+    <culture>
+        <activity-name>Warsaw Public Bike</activity-name>
+        <activity-type>other</activity-type>
+        <info-url>https://veturilo.waw.pl/en/</info-url>
+    </culture>
+</ssps-response>
