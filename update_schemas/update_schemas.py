@@ -419,5 +419,11 @@ destination = OUTPUT_DIRECTORY + xml_xsd
 os.makedirs(os.path.dirname(destination), exist_ok=True)
 shutil.copyfile(source, destination)
 
+ewp_xsd = "ewp.xsd"
+source = os.path.join(SCRIPT_DIR, ewp_xsd)
+destination = OUTPUT_DIRECTORY + ewp_xsd
+os.makedirs(os.path.dirname(destination), exist_ok=True)
+shutil.copyfile(source, destination)
+
 # Cleanup
 remove_dir(TEMP_REPOS_DIR)
