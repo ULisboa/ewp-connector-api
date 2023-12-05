@@ -31,9 +31,12 @@ This library includes stable APIs and APIs still in progress.
 
 ## Update the APIs
 
-By executing ```./update_schemas/update_schemas.sh``` it is possible to refresh the folder [src/main/resources/schemas](src/main/resources/schemas).
+The file [update_schemas/ewp.xsd](update_schemas/ewp.xsd) is used during the xjc process.
+This file must be updated when it is necessary to support new APIs or new major versions.
 
-Note that new major versions require the corresponding adaptations on the correct file of [src/main/resources/xjb](src/main/resources/xjb).
+The files at [src/main/resources/xjb](src/main/resources/xjb) command the xjc on how to generate the Java classes from the XSD files.
+
+By executing ```./update_schemas/update_schemas.sh``` it is possible to refresh the folder [src/main/resources/schemas](src/main/resources/schemas).
 
 ## Build and install library
 ```
