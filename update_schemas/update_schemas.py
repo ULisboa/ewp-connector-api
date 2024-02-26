@@ -219,7 +219,7 @@ class ApiDiscoveryProcessor(RepoProcessor):
         return filename == "manifest-entry.xsd"
 
     def get_allowed_versions(self):
-        return [4, 5]
+        return [4, 5, 6]
 
 
 class ApiRegistryProcessor(RepoProcessor):
