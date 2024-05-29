@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jaxb:bindings version="2.1"
                xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
-               xmlns:xs="http://www.w3.org/2001/XMLSchema">
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
+               xmlns:annox="http://annox.dev.java.net"
+               extensionBindingPrefixes="xjc annox">
 
     <!-- V2 -->
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iia-cnr/stable-v2/response.xsd">
         <jaxb:bindings node="//xs:element[@name='iia-cnr-response']">
             <jaxb:class name="IiaCnrResponseV2"/>
+            <annox:annotate>
+                @javax.xml.bind.annotation.XmlRootElement(name="iia-cnr-response")
+            </annox:annotate>
         </jaxb:bindings>
 
         <jaxb:schemaBindings>
@@ -31,6 +39,9 @@
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iia-cnr/stable-v3/response.xsd">
         <jaxb:bindings node="//xs:element[@name='iia-cnr-response']">
             <jaxb:class name="IiaCnrResponseV3"/>
+            <annox:annotate>
+                @javax.xml.bind.annotation.XmlRootElement(name="iia-cnr-response")
+            </annox:annotate>
         </jaxb:bindings>
 
         <jaxb:schemaBindings>
