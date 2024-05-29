@@ -8,9 +8,6 @@
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobility-la-cnr/stable-v1/response.xsd">
         <jaxb:bindings node="//xs:element[@name='omobility-la-cnr-response']">
             <jaxb:class name="OmobilityLaCnrResponseV1"/>
-            <annox:annotate>
-                @javax.xml.bind.annotation.XmlRootElement(name="omobility-la-cnr-response")
-            </annox:annotate>
         </jaxb:bindings>
 
         <jaxb:schemaBindings>

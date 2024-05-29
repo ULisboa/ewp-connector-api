@@ -93,9 +93,8 @@
               <args>
                 <arg>-Xannotate</arg>
               </args>
-              <debug>true</debug>
-              <verbose>true</verbose>
               <catalog>src/main/resources/schemas/__index__.xml</catalog>
+              <strict>false</strict>
               <schemaDirectory>src/main/resources/schemas/</schemaDirectory>
               <schemaIncludes>
                 <include>ewp.xsd</include>

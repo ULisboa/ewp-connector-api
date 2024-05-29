@@ -8,9 +8,6 @@
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-imobility-tor-cnr/stable-v1/response.xsd">
         <jaxb:bindings node="//xs:element[@name='imobility-tor-cnr-response']">
             <jaxb:class name="ImobilityTorCnrResponseV1"/>
-            <annox:annotate>
-                @javax.xml.bind.annotation.XmlRootElement(name="imobility-tor-cnr-response")
-            </annox:annotate>
         </jaxb:bindings>
 
         <jaxb:schemaBindings>

@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.15.0](https://github.com/ULisboa/ewp-connector-api/tree/3.15.0) (2024-05-29)
+
+### Features
+-  add @XmlRootElement annotations to CNR related response classes ([2bb1a5b095a45e4](https://github.com/ULisboa/ewp-connector-api/commit/2bb1a5b095a45e458a25160722aec67bd827bfa9))
+
+
+
+
 ## [3.14.0](https://github.com/ULisboa/ewp-connector-api/tree/3.14.0) (2024-02-26)
 
 

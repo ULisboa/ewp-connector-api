@@ -12,9 +12,6 @@
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iia-cnr/stable-v2/response.xsd">
         <jaxb:bindings node="//xs:element[@name='iia-cnr-response']">
             <jaxb:class name="IiaCnrResponseV2"/>
-            <annox:annotate>
-                @javax.xml.bind.annotation.XmlRootElement(name="iia-cnr-response")
-            </annox:annotate>
         </jaxb:bindings>
 
         <jaxb:schemaBindings>
@@ -39,9 +36,6 @@
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-iia-cnr/stable-v3/response.xsd">
         <jaxb:bindings node="//xs:element[@name='iia-cnr-response']">
             <jaxb:class name="IiaCnrResponseV3"/>
-            <annox:annotate>
-                @javax.xml.bind.annotation.XmlRootElement(name="iia-cnr-response")
-            </annox:annotate>
         </jaxb:bindings>
 
         <jaxb:schemaBindings>
