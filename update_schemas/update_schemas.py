@@ -366,7 +366,7 @@ for name, url in repos:
             Repo.clone_from(url, TEMP_REPOS_DIR + name)
             retry = False
             # Wait some time between repos to respect Github's rate limiting
-            time.sleep(1)
+            time.sleep(2)
         except GitCommandError as e:
             if retries >= max_retries:
                 raise
