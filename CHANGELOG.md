@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.1.2](https://github.com/ULisboa/ewp-connector-api/tree/4.1.2) (2025-05-16)
+
+### Features
+-  add update request/response of ewp-specs-api-omobilities's update method ([585ac4492b2ecda](https://github.com/ULisboa/ewp-connector-api/commit/585ac4492b2ecda7b12323678b63e2ec8850f082))
+
+
+
+
 ## [4.1.1](https://github.com/ULisboa/ewp-connector-api/tree/4.1.1) (2025-05-16)
 
 
