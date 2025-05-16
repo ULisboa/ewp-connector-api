@@ -1,5 +1,27 @@
 # Changelog
 
+## [4.1.1](https://github.com/ULisboa/ewp-connector-api/tree/4.1.1) (2025-05-16)
+
+
+
+
+
+## [4.1.0](https://github.com/ULisboa/ewp-connector-api/tree/4.1.0) (2025-05-16)
+
+
+
+
+
+## [3.17.0](https://github.com/ULisboa/ewp-connector-api/tree/3.17.0) (2025-05-16)
+
+
+### Improvements
+-  update schemas and implement XJBs (ewp-specs-api-omobilities v3, ewp-specs-api-imobilities v2, ewp-specs-api-omobility-stats v1, ewp-specs-api-omobility-cnr v2 and ewp-specs-api-imobility-cnr v2) ([f00912ffdf32181](https://github.com/ULisboa/ewp-connector-api/commit/f00912ffdf321814c4ac6ef69405e861725ffd28))
+-  increase timeout between cloning repositories to 2 seconds ([1d798a78dc72556](https://github.com/ULisboa/ewp-connector-api/commit/1d798a78dc7255664e2482b4c5d874cd0ea9cdcf))
+-  improve update_schemas.sh to use, by default, a virtual environment (venv) ([4996009b35ecf15](https://github.com/ULisboa/ewp-connector-api/commit/4996009b35ecf1581bd8b453bd1f5d6d3f33de13))
+
+
+
 ## [3.16.0](https://github.com/ULisboa/ewp-connector-api/tree/3.16.0) (2024-05-29)
 
 
