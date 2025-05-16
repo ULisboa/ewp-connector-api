@@ -3,6 +3,7 @@
                xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
                xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+    <!-- V1 -->
     <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-imobilities/stable-v1/endpoints/get-response.xsd">
         <jaxb:schemaBindings>
             <jaxb:package name="eu.erasmuswithoutpaper.api.imobilities.v1.endpoints"/>
@@ -21,4 +22,25 @@
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
+
+    <!-- V2 -->
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-imobilities/stable-v2/endpoints/get-response.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.imobilities.v2.endpoints"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V2" />
+              <jaxb:elementName suffix="V2" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-imobilities/stable-v2/manifest-entry.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.imobilities.v2"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V2" />
+              <jaxb:elementName suffix="V2" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
 </jaxb:bindings>

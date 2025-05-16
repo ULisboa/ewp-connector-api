@@ -60,4 +60,33 @@
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
+
+    <!-- V3 -->
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobilities/stable-v3/endpoints/get-response.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.omobilities.v3.endpoints"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V3" />
+              <jaxb:elementName suffix="V3" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobilities/stable-v3/endpoints/index-response.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.omobilities.v3.endpoints"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V3" />
+              <jaxb:elementName suffix="V3" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobilities/stable-v3/manifest-entry.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.omobilities.v3"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V3" />
+              <jaxb:elementName suffix="V3" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
 </jaxb:bindings>

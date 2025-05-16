@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema elementFormDefault="qualified" targetNamespace="https://github.com/emrex-eu/elmo-schemas/tree/v1"
-  xmlns="https://github.com/emrex-eu/elmo-schemas/tree/v1"
+<xs:schema elementFormDefault="qualified" targetNamespace="https://github.com/emrex-eu/elmo-schemas/tree/v2"
+  xmlns="https://github.com/emrex-eu/elmo-schemas/tree/v2"
   xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
   xmlns:europass="http://europass.cedefop.europa.eu/Europass/V2.0"
   xmlns:xml="http://www.w3.org/XML/1998/namespace"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:ewpAddress="https://github.com/erasmus-without-paper/ewp-specs-types-address/tree/stable-v1">
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="https://www.w3.org/2001/03/xml.xsd" />
-  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="https://raw.githubusercontent.com/emrex-eu/elmo-schemas/v1/references/xmldsig-core-schema.xsd" />
-  <xs:import namespace="http://europass.cedefop.europa.eu/Europass/V2.0" schemaLocation="https://raw.githubusercontent.com/emrex-eu/elmo-schemas/v1/references/EUROPASS_ISOCountries_V1.1.xsd" />
+  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="https://raw.githubusercontent.com/emrex-eu/elmo-schemas/v2/references/xmldsig-core-schema.xsd" />
+  <xs:import namespace="http://europass.cedefop.europa.eu/Europass/V2.0" schemaLocation="https://raw.githubusercontent.com/emrex-eu/elmo-schemas/v2/references/EUROPASS_ISOCountries_V1.1.xsd" />
   <xs:import namespace="https://github.com/erasmus-without-paper/ewp-specs-types-address/tree/stable-v1" schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-types-address/stable-v1/schema.xsd" />
   <xs:annotation>
     <xs:documentation>
@@ -139,7 +139,7 @@
       resolves to a GitHub webpage with the content of the XSD file. The URL contains
       a Git branch name - the *major* version of the schema:
 
-      https://github.com/emrex-eu/elmo-schemas/tree/v1
+      https://github.com/emrex-eu/elmo-schemas/tree/v2
 
       Additionally, we release new versions of the schema as Git tags. Every
       version number consists of three parts (X.Y.Z) which conform to the Semantic
@@ -147,7 +147,7 @@
 
       * If a documentation is being clarified (in a insignificant way), the XSD can
         be altered in the master branch. Periodically, such changes are merged to
-        the v1 branch and the THIRD number of the version string is then incremented.
+        the v2 branch and the THIRD number of the version string is then incremented.
 
       * If the schema is changed in a significant way, for example a new element is
         added, but the change does not break backward compatibility, then the SECOND
@@ -190,16 +190,33 @@
           </xs:annotation>
           <xs:complexType>
             <xs:sequence>
-              <xs:element minOccurs="0" name="citizenship" type="europass:countryCode">
+              <xs:element minOccurs="0" name="citizenship">
                 <xs:annotation>
                   <xs:documentation>
-                    The ISO 3166-1-alpha-2 code of the country the student is a citizen of.
-                    E.g. &quot;PL&quot;.
-
+                    The ISO-3166-alpha-2 code or the http://publications.europa.eu/resource/authority/country URI of the 
+                    country the student is a citizen of.
+                    E.g. &quot;PL&quot; or &quot;https://publications.europa.eu/resource/authority/country/POL&quot;.
+                    
                     For server implementers: If this is not known then you MUST skip the element
                     altogether (instead of, for example, providing an empty value).
                   </xs:documentation>
                 </xs:annotation>
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:token">
+                      <xs:attribute name="type" type="xs:token" use="required">
+                        <xs:annotation>
+                          <xs:documentation>
+                            These are the currently supported country code types:
+         
+                            ISO – ISO-3166-alpha-2 code
+                            URI – the URI link to the EC Countries and territories schema
+                          </xs:documentation>
+                        </xs:annotation>
+                      </xs:attribute>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
               </xs:element>
               <xs:element maxOccurs="unbounded" minOccurs="0" name="identifier">
                 <xs:annotation>
@@ -285,15 +302,58 @@
                   </xs:documentation>
                 </xs:annotation>
               </xs:element>
+              <!-- DEPRECATED -->
+              <xs:element minOccurs="0" name="bday" type="xs:date">
+                <xs:annotation>
+                  <xs:documentation>For server implementers: The birth date is vital to EMREX and SHOULD be provided.
+                    If you cannot provide it, you MUST skip the bday element altogether.
+
+                    This data element is obselete, and has been replaces with dateOfBirth. Providers of EMPs should for some
+                    time provide both bday and dataOfBirth to support EMCs that has not upgraded to ELMO2x yet.
+                    Providers of EMCs should only use dateOfBirth after upgradering to ELMO2.x
+
+                    Temporarily making bday avalible again for version 2.1 to 2.x. This is to facilitate a more smooth
+                    transition to ELMO v.2.x for all EMCs as well as the EMPs.
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
               <xs:element minOccurs="0" maxOccurs="1" name="placeOfBirth" type="xs:token">
                 <xs:annotation>
                   <xs:documentation>
-                    The student's place of birth.
+                    The student's place of birth. Example values can be town, city, municipality or county.
 
                     For server implementers: If this is not known then you MUST skip the element
                     altogether (instead of, for example, providing an empty value).
                   </xs:documentation>
                 </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="countryOfBirth">
+                <xs:annotation>
+                  <xs:documentation>
+                    The ISO-3166-alpha-2 code or the http://publications.europa.eu/resource/authority/country URI of the 
+                    country the student was born in.
+                    E.g. &quot;PL&quot; or &quot;https://publications.europa.eu/resource/authority/country/POL&quot;.
+
+                    For server implementers: If this is not known then you MUST skip the element
+                    altogether (instead of, for example, providing an empty value).
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                 <xs:simpleContent>
+                   <xs:extension base="xs:token">
+                     <xs:attribute name="type" type="xs:token" use="required">
+                       <xs:annotation>
+                         <xs:documentation>
+                           These are the currently supported country code types:
+         
+                           ISO – ISO-3166-alpha-2 code
+                           URI – the URI link to the EC Countries and territories schema
+                         </xs:documentation>
+                       </xs:annotation>
+                     </xs:attribute>
+                   </xs:extension>
+                 </xs:simpleContent>
+               </xs:complexType>
               </xs:element>
               <xs:element minOccurs="0" maxOccurs="1" name="birthName" type="xs:token">
                 <xs:annotation>
@@ -461,6 +521,79 @@
                       </xs:documentation>
                     </xs:annotation>
                   </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="status">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="code">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:token">
+                          <xs:enumeration value="FULL">
+                            <xs:annotation>
+                              <xs:documentation>
+                                All data is collected and delivered in this ELMO.
+                              </xs:documentation>
+                            </xs:annotation>
+                          </xs:enumeration>
+                          <xs:enumeration value="SELECTION">
+                            <xs:annotation>
+                              <xs:documentation>
+                                The user selected data is collected and delivered in this ELMO.
+                              </xs:documentation>
+                            </xs:annotation>
+                          </xs:enumeration>
+                          <xs:enumeration value="PARTIAL_TEMPORARY">
+                            <xs:annotation>
+                              <xs:documentation>
+                                An error has occured that causes the EMP to only be able to deliver a partial
+                                collection of the data. This error is of a temporary nature and the complete
+                                data set is expected to be delivered once the system recovers.
+                              </xs:documentation>
+                            </xs:annotation>
+                          </xs:enumeration>
+                          <xs:enumeration value="PARTIAL_PERMANENT">
+                            <xs:annotation>
+                              <xs:documentation>
+                                An error has occured that causes the EMP to only be able to deliver a partial
+                                collection of the data. This error is of a permanent nature and the EMC cannot
+                                expect to collect the full data set.
+
+                                Examples of this includes, but is not limited to:
+                                 - An issuer no longer exists
+                                 - A data provider is no longer active
+                              </xs:documentation>
+                            </xs:annotation>
+                          </xs:enumeration>
+                          <xs:enumeration value="ERROR_TEMPORARY">
+                            An error has occured that causes the EMP to not be able to collect and deliver
+                            any data. This error is of a temporary nature and the complete data set is
+                            expected to be delivered once the system recovers.
+                          </xs:enumeration>
+                          <xs:enumeration value="ERROR_PERMANENT">
+                            <xs:annotation>
+                              <xs:documentation>
+                                An error has occured that causes the EMP to not be able to collect and deliver
+                                any data. This error is of a permanent nature and the EMC cannot
+                                expect to collect the full data set.
+
+                                Examples of this includes, but is not limited to:
+                                - An issuer no longer exists
+                                - A data provider is no longer active
+                              </xs:documentation>
+                            </xs:annotation>
+                          </xs:enumeration>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="message" type="PlaintextMultilineStringWithOptionalLang">
+                      <xs:annotation>
+                        <xs:documentation>
+                          A message that can be read by the EMC to give the user additional information about what happened
+                        </xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
                 </xs:complexType>
               </xs:element>
               <xs:element maxOccurs="unbounded" minOccurs="0" name="attachment" type="Attachment">
@@ -736,6 +869,7 @@
             <xs:enumeration value="Letter of Nomination" />
             <xs:enumeration value="Certificate of Training" />
             <xs:enumeration value="Learning Agreement" />
+            <xs:enumeration value="Certificate of Enrolment" />
             <xs:enumeration value="Other">
               <xs:annotation>
                 <xs:documentation>
@@ -799,14 +933,28 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" name="country" type="europass:countryCode">
-        <xs:annotation>
-          <xs:documentation>
-            An ISO 3166-1-alpha-2 code of the country in which the institution is
-            operating. If the country is not known, or the institution is an international
-            one, then this element MUST NOT be present.
-          </xs:documentation>
-        </xs:annotation>
+      <xs:element minOccurs="0" maxOccurs="1" name="country">
+       <xs:annotation>
+         <xs:documentation>
+           For server implementers: You MUST be able to provide an ISO 2 digit country code or http://publications.europa.eu/resource/authority/country URI
+         </xs:documentation>
+       </xs:annotation>
+       <xs:complexType>
+         <xs:simpleContent>
+           <xs:extension base="xs:token">
+             <xs:attribute name="type" type="xs:token" use="required">
+               <xs:annotation>
+                 <xs:documentation>
+                   These are the currently supported country code types:
+ 
+                   ISO – ISO-3166-alpha-2 code
+                   URI – the URI link to the EC Countries and territories schema
+                 </xs:documentation>
+               </xs:annotation>
+             </xs:attribute>
+           </xs:extension>
+         </xs:simpleContent>
+       </xs:complexType>
       </xs:element>
       <xs:element maxOccurs="unbounded" minOccurs="1" name="identifier">
         <xs:annotation>
@@ -1104,6 +1252,21 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element minOccurs="0" name="documentType">
+        <xs:annotation>
+          <xs:documentation>Defines the type of the document. Can be Diploma, Certificate, Enrolment or Admission.
+            This element is not required. When left empty the document will be considered a Diploma.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Diploma"/>
+            <xs:enumeration value="Certificate"/>
+            <xs:enumeration value="Enrolment"/>
+            <xs:enumeration value="Admission"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
       <xs:element name="specifies">
         <xs:annotation>
           <xs:documentation>
@@ -1146,6 +1309,72 @@
                           </xs:attribute>
                         </xs:extension>
                       </xs:simpleContent>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="enrolment" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>
+                        For enrolment status of the LearningOpportunityInstance must be set to "in-progres".
+                        For an enrolment to be valid these fields must contain a value:
+                        - given name
+                        - family name
+                        - enrolmentDate
+                        - issuer
+                          - name
+                          - country
+                        - enrolmentInstitution
+                          - name
+                          - country
+                        - title of study programme
+                        - duration of study programme
+                          - years or months
+                        - start date of academic year
+                        - end date of academic year
+                        - if this document applies to admission or enrolment
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="enrolmentInstitution" type="Issuer">
+                          <xs:annotation>
+                            <xs:documentation>
+                              the institution the student is enrolled to
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element name="enrolmentDate" type="xs:date">
+                          <xs:annotation>
+                            <xs:documentation>
+                              the date the student was enrolled
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element name="academicYear">
+                          <xs:annotation>
+                            <xs:documentation>
+                              The academic year of this enrolment. Specified with a start and end date.
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="start" type="xs:date">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    the start date of the academic yar
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="end" type="xs:date">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    the end date of the academic year
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
                     </xs:complexType>
                   </xs:element>
                   <xs:element name="start" type="xs:date" minOccurs="0">
@@ -1209,6 +1438,13 @@
                         </xs:element>
                       </xs:sequence>
                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="duration" minOccurs="0" maxOccurs="1" type="xs:duration">
+                    <xs:annotation>
+                      <xs:documentation>
+                        This describes the normal duration in time for an education.
+                      </xs:documentation>
+                    </xs:annotation>
                   </xs:element>
                   <xs:element name="status" minOccurs="0" maxOccurs="1">
                     <xs:annotation>
@@ -1444,6 +1680,7 @@
                             <xs:documentation>
                               Currently supported types are:
                                 - EQF (European Qualification Framework)
+                                - NQF (National Qualification Framework)
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
@@ -1563,21 +1800,53 @@
   <xs:complexType name="ResultOfRecognition">
     <xs:annotation>
       <xs:documentation>
-        TODO: Documentation on how to use this bad boy.
+        The result of a recognition process
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="identifier">
+        <xs:annotation>
+          <xs:documentation>
+            For server implementers: Depending on your clients, you might be required to
+            supply specific identifier types (because clients expect them). E.g. some EMREX
+            clients expect the &quot;local&quot; identifier to be present.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:token">
+              <xs:attribute name="type" type="xs:token" use="required">
+                <xs:annotation>
+                  <xs:documentation>
+                    Some predefined type values include:
+
+                    &quot;local&quot; - the local unique identifier of the node. &quot;Unique&quot; means that the
+                    [node type, local identifier] tuple MUST uniquely identify this node
+                    *within the scope of the host institution* (the one provided in the issuer
+                    element). If you cannot provide the &quot;type&quot; for this node, then the provided
+                    &quot;local&quot; identifier MUST be unique by itself. If you cannot guarantee such
+                    uniqueness then you MUST NOT provide the &quot;local&quot; identifier at all (you can
+                    still use other identifiers).
+
+                    You can also have any number of custom types.
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:attribute>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="title" type="TokenWithOptionalLang">
         <xs:annotation>
           <xs:documentation>
-            TODO: document title
+            The title of the recognition
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="description" type="PlaintextMultilineStringWithOptionalLang">
         <xs:annotation>
           <xs:documentation>
-            TODO: Document descr
+            The description of the recognition
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1602,7 +1871,7 @@
       <xs:element name="status">
         <xs:annotation>
           <xs:documentation>
-            TODO: document this controlled list
+            The status of the recognition process
           </xs:documentation>
         </xs:annotation>
         <xs:simpleType>
@@ -1610,21 +1879,29 @@
             <xs:enumeration value="Positive">
               <xs:annotation>
                 <xs:documentation>
-                  TODO: document a positive result of recognition
+                  All parts of the recognition were positive, meaning all degrees and/or subjects
+                  in this recognition have been recognized.
                 </xs:documentation>
               </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="Negative">
               <xs:annotation>
                 <xs:documentation>
-                  TODO: Document a negative result of recognition.
+                  All parts of the recognition were negative meaning all degrees and/or subjects
+                  in this recognition have not been recognized.
                 </xs:documentation>
               </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="Partially Positive">
               <xs:annotation>
                 <xs:documentation>
-                  TODO: Document a partially positive result of recognition.
+                  Some parts of the recognition were positive and some parts were negative.
+                  Combinations can be, but are not limited to:
+                  - A degree was recognized, but a second degree was not recognized.
+                  - A degree was recognized, but a single course outside of the
+                    degree was not recognized.
+                  - A single subject was recognized but a degree was not recognized.
+                  - A course subject was recognized, but a second course was not recognized.
                 </xs:documentation>
               </xs:annotation>
             </xs:enumeration>
@@ -1634,14 +1911,14 @@
       <xs:element minOccurs="0" maxOccurs="1" name="decisionDate" type="xs:date">
         <xs:annotation>
           <xs:documentation>
-            TODO: Document decisionDate
+            The date on which the recognition process was decided.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="recognitionBasis">
         <xs:annotation>
           <xs:documentation>
-            TODO: document Recognition Basis
+            The basis for this recognition
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -1649,7 +1926,7 @@
             <xs:element name="recognitionReport" type="RecognitionReport">
               <xs:annotation>
                 <xs:documentation>
-                  TODO: Document this
+                  The report that serves as the basis of this recognition
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
@@ -1659,7 +1936,7 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="recognitionResult">
         <xs:annotation>
           <xs:documentation>
-            TODO: Document Recognition Result
+            The result of this recognition
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -1667,7 +1944,7 @@
             <xs:element name="learningOpportunitySpecification" type="LearningOpportunitySpecification">
               <xs:annotation>
                 <xs:documentation>
-                  TODO: Document this LOS and how it works in Recognitions
+                  The result of this recognition
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
@@ -1677,7 +1954,8 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="recognitionMapping">
         <xs:annotation>
           <xs:documentation>
-            TODO: Document the mapping
+            Mapping what results for the recognitionBasis element is recognized as what result
+            from the recognitionResult.
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -1685,7 +1963,14 @@
             <xs:element name="mapping">
               <xs:annotation>
                 <xs:documentation>
-                  TODO: Document this object
+                  The actual mapping of the recognition.
+                  Examples can be but are not limited to:
+                  - Course A recognized as Course X
+                  - Course A and B are recognized as Course X
+                  - Course A, B and C are recognized as Course X and Y
+                  - Degree A is recognized as Degree X
+                  - Degree A and B recognized as Degree X.
+                  - Degree A and Course B recognized as Degree X
                 </xs:documentation>
               </xs:annotation>
               <xs:complexType>
@@ -1755,7 +2040,7 @@
   <xs:complexType name="RecognitionReport">
     <xs:annotation>
       <xs:documentation>
-        TODO: Document Recognition Report
+        The recognition report
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

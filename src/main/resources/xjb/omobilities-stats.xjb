@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings version="2.1"
+               xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:annox="http://annox.dev.java.net"
+               extensionBindingPrefixes="xjc annox">
+
+    <!-- V1 -->
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobility-stats/stable-v1/response.xsd">
+        <jaxb:bindings node="//xs:element[@name='omobility-stats-response']">
+            <jaxb:class name="OmobilityStatsResponseV1"/>
+        </jaxb:bindings>
+
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.omobilities.stats.v1"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V1" />
+              <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobility-stats/stable-v1/manifest-entry.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="eu.erasmuswithoutpaper.api.omobilities.stats.v1"/>
+            <jaxb:nameXmlTransform>
+              <jaxb:typeName suffix="V1" />
+              <jaxb:elementName suffix="V1" />
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+</jaxb:bindings>

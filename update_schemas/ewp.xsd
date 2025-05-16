@@ -217,6 +217,20 @@
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/blob/stable-v2/manifest-entry.xsd"
   />
 
+  <!-- V3 -->
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobilities/stable-v3/endpoints/get-response.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/blob/stable-v3/endpoints/get-response.xsd"
+  />
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobilities/stable-v3/endpoints/index-response.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/blob/stable-v3/endpoints/index-response.xsd"
+  />
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobilities/stable-v3/manifest-entry.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/blob/stable-v3/manifest-entry.xsd"
+  />
+
 
   <xs:import
     schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobility-las/stable-v1/endpoints/get-response.xsd"
@@ -256,6 +270,8 @@
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-la-cnr/blob/stable-v1/manifest-entry.xsd"
   />
 
+  <!-- Outgoing Mobilities CNR -->
+  <!-- V1 -->
   <xs:import
     schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobility-cnr/stable-v1/response.xsd"
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-cnr/tree/stable-v1"
@@ -265,6 +281,28 @@
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-cnr/blob/stable-v1/manifest-entry.xsd"
   />
 
+  <!-- V2 -->
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobility-cnr/stable-v2/response.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-cnr/tree/stable-v2"
+  />
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobility-cnr/stable-v2/manifest-entry.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-cnr/blob/stable-v2/manifest-entry.xsd"
+  />
+
+  <!-- Outgoing Mobilities Stats -->
+  <!-- V1 -->
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobility-stats/stable-v1/response.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-stats/tree/stable-v1"
+  />
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobility-stats/stable-v1/manifest-entry.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-stats/blob/stable-v1/manifest-entry.xsd"
+  />
+
+  <!-- V1 -->
   <xs:import
     schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-imobilities/stable-v1/endpoints/get-response.xsd"
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-imobilities/blob/stable-v1/endpoints/get-response.xsd"
@@ -274,6 +312,18 @@
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-imobilities/blob/stable-v1/manifest-entry.xsd"
   />
 
+  <!-- V2 -->
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-imobilities/stable-v2/endpoints/get-response.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-imobilities/blob/stable-v2/endpoints/get-response.xsd"
+  />
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-imobilities/stable-v2/manifest-entry.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-imobilities/blob/stable-v2/manifest-entry.xsd"
+  />
+
+  <!-- Incoming Mobilities CNR -->
+  <!-- V1 -->
   <xs:import
     schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-imobility-cnr/stable-v1/response.xsd"
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-imobility-cnr/tree/stable-v1"
@@ -281,6 +331,16 @@
   <xs:import
     schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-imobility-cnr/stable-v1/manifest-entry.xsd"
     namespace="https://github.com/erasmus-without-paper/ewp-specs-api-imobility-cnr/blob/stable-v1/manifest-entry.xsd"
+  />
+
+  <!-- V2 -->
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-imobility-cnr/stable-v2/response.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-imobility-cnr/tree/stable-v2"
+  />
+  <xs:import
+    schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-imobility-cnr/stable-v2/manifest-entry.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-imobility-cnr/blob/stable-v2/manifest-entry.xsd"
   />
 
   <!--
