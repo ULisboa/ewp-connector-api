@@ -29,7 +29,7 @@
   <scm>
     <connection>scm:git:git@github.com:ULisboa/ewp-connector-api.git</connection>
     <developerConnection>scm:git:git@github.com:ULisboa/ewp-connector-api.git</developerConnection>
-    <url>http://github.com/ULisboa/ewp-connector-api/tree/master</url>
+    <url>http://github.com/ULisboa/ewp-connector-api/tree/main</url>
     <tag>HEAD</tag>
   </scm>
 
