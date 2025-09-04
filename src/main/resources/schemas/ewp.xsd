@@ -228,11 +228,11 @@
   />
   <xs:import
     schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobilities/stable-v3/endpoints/update-request.xsd"
-    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobility/blob/stable-v3/endpoints/update-request.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/blob/stable-v3/endpoints/update-request.xsd"
   />
   <xs:import
     schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobilities/stable-v3/endpoints/update-response.xsd"
-    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobility/blob/stable-v3/endpoints/update-response.xsd"
+    namespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/blob/stable-v3/endpoints/update-response.xsd"
   />
   <xs:import
     schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobilities/stable-v3/manifest-entry.xsd"
