@@ -241,7 +241,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.7.0</version>
+            <version>3.11.3</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -251,7 +251,13 @@
               </execution>
             </executions>
             <configuration>
-              <failOnError>false</failOnError> <!-- Ensures the build does not fail on errors -->
+              <!--              <failOnError>false</failOnError> &lt;!&ndash; Ensures the build does not fail on errors &ndash;&gt;-->
+              <!-- NOTE: these packages are currently excluded of javadoc documentation
+                as it produces error because they include XML tags on the comments
+                at the moment. -->
+              <excludePackageNames>
+                eu.erasmuswithoutpaper.api.architecture.v1:eu.erasmuswithoutpaper.api.imobilities.tors.v1.endpoints:eu.erasmuswithoutpaper.api.imobilities.tors.v2.endpoints
+              </excludePackageNames>
             </configuration>
           </plugin>
 
