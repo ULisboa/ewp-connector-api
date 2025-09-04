@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>pt.ulisboa</groupId>
   <artifactId>ewp-connector-api</artifactId>
-  <version>4.1.4</version>
+  <version>4.1.5-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>EWP Connector API</name>
@@ -30,7 +30,7 @@
     <connection>scm:git:git@github.com:ULisboa/ewp-connector-api.git</connection>
     <developerConnection>scm:git:git@github.com:ULisboa/ewp-connector-api.git</developerConnection>
     <url>http://github.com/ULisboa/ewp-connector-api/tree/master</url>
-    <tag>4.1.4</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <properties>
