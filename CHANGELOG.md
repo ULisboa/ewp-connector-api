@@ -1,5 +1,37 @@
 # Changelog
 
+## [4.1.7](https://github.com/ULisboa/ewp-connector-api/tree/4.1.7) (2025-09-04)
+
+
+
+
+
+## [4.1.6](https://github.com/ULisboa/ewp-connector-api/tree/4.1.6) (2025-09-04)
+
+
+
+
+
+## [4.1.5](https://github.com/ULisboa/ewp-connector-api/tree/4.1.5) (2025-09-04)
+
+
+
+
+
+## [4.1.4](https://github.com/ULisboa/ewp-connector-api/tree/4.1.4) (2025-09-04)
+
+
+
+
+
+## [4.1.3](https://github.com/ULisboa/ewp-connector-api/tree/4.1.3) (2025-09-04)
+
+
+### Improvements
+-  update ewp-specs-api-omobilities to latest specification version ([5bf2a6419b55e0f](https://github.com/ULisboa/ewp-connector-api/commit/5bf2a6419b55e0fccbf45e0a47388bceb2372f25))
+
+
+
 ## [4.1.2](https://github.com/ULisboa/ewp-connector-api/tree/4.1.2) (2025-05-16)
 
 ### Features
