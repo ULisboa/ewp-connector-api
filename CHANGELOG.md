@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.1.8](https://github.com/ULisboa/ewp-connector-api/tree/4.1.8) (2025-12-05)
+
+
+
+
+
 ## [4.1.7](https://github.com/ULisboa/ewp-connector-api/tree/4.1.7) (2025-09-04)
 
 
